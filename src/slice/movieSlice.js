@@ -2,17 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    movie: [{
+    movie: [
+        {
         id: 1,
         movieName: "Diljale",
         ratings: 5,
         collection: "650cr."
     },
+    {
+        id: 2,
+        movieName: "xyz",
+        ratings: 2,
+        collection: "10cr."
+    },
     ]
 
 }
 
-const movie = createSlice({
+const movieSlice = createSlice({
     name: "movie",
     initialState,
     reducers: {
@@ -24,6 +31,6 @@ const movie = createSlice({
 })
 
 // console.log(movie.actions)
-export const { setMovie } = movie.actions;
-export const movieReducer = movie.reducer;
+export const { setMovie } = movieSlice.actions;
+export default movieSlice.reducer;
 

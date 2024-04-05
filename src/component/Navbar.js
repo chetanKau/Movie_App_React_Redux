@@ -13,7 +13,7 @@ const Navbar = () => {
                         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
                             <div class="flex flex-shrink-0 items-center ">
                                 <NavLink to="/">
-                                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+                                    <img class="h-8 w-auto" src="https://moviex-olive.vercel.app/assets/movix-logo-d720c325.svg" alt="Your Company" />
                                 </NavLink>
 
                             </div>

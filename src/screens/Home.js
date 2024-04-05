@@ -1,24 +1,26 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Navbar from '../component/Navbar';
+import Footer from '../component/Footer';
 
 function Home() {
   const data = useSelector((state) => state)
   console.log(data.movieSlice.movie[0])
-
+  console.log(process.env.REACT_APP_TOKEN);
   return (
     <div >
+      <Navbar/>
       {
         data.movieSlice.movie.map((movieDetails) => {
           return (
-          <div key={movieDetails.id} >
-            <h2>Movie : {movieDetails.movieName}</h2>
-            <h4>Ratings : {movieDetails.ratings}</h4>
+          <div  >
+            
           </div>
-
 
           )
         })
       }
+      <Footer/>
     </div>
   )
 }

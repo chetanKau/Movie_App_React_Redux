@@ -3,18 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     movie: [
-        {
-        id: 1,
-        movieName: "Diljale",
-        ratings: 5,
-        collection: "650cr."
-    },
-    {
-        id: 2,
-        movieName: "xyz",
-        ratings: 2,
-        collection: "10cr."
-    },
+        
     ]
 
 }

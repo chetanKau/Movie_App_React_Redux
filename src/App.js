@@ -2,8 +2,11 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './screens/Home';
 import Movie from './screens/Movie';
-import { Component } from 'react';
+// import { Component } from 'react';
 import TvShow from './screens/TvShow';
+import Navbar from './component/Navbar';
+import Footer from './component/Footer';
+
 
 const router = createBrowserRouter([
   {
@@ -27,7 +30,9 @@ function App() {
   return (
     
       <RouterProvider router={router}>
+        <Navbar/>
         <Home/>
+        <Footer/>
       </RouterProvider>
     
   );

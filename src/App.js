@@ -15,11 +15,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/Movie",
-    Component: Movie
+    element: <div>
+      <Navbar/>
+      <Movie/>
+      <Footer/>
+    </div>
   },
   {
     path: "/TvShow",
-    Component: TvShow
+    element: <div>
+      <Navbar/>
+      <TvShow/>
+      <Footer/>
+    </div>
   }
 
 
@@ -30,9 +38,7 @@ function App() {
   return (
     
       <RouterProvider router={router}>
-        <Navbar/>
         <Home/>
-        <Footer/>
       </RouterProvider>
     
   );

@@ -4,7 +4,7 @@ import Navbar from '../component/Navbar'
 function TvShow() {
     return (
         <div>
-            <Navbar/>
+            
             Tv Shows
         </div>
     )

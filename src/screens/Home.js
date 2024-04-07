@@ -4,7 +4,7 @@ import Footer from '../component/Footer';
 import SearchTab from '../component/SearchTab';
 import 'react-multi-carousel/lib/styles.css';
 import TrendingMovie from '../component/TrendingMovie';
-import TopRatedMovies from '../utils/TopRatedMovies';
+import Popular from '../component/Popular';
 
 function Home() {
   console.log(process.env.REACT_APP_TOKEN);
@@ -14,7 +14,7 @@ function Home() {
       <Navbar />
       <SearchTab />
       <TrendingMovie />
-      <TopRatedMovies />
+      <Popular/>
       <Footer />
     </div>
   )

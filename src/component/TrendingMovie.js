@@ -1,20 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { useSelector } from 'react-redux';
+import { fetchApi } from '../utils/api.js'
+import { useDispatch } from 'react-redux';
+import { setTopRatedMovie } from '../slice/movieSlice';
 
 
 function TrendingMovie() {
 
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     const selector = useSelector((state) => state.movieSlice.topRatedMovie)
+    const dispatch = useDispatch();
+    
 
+    async function topRatedMovieData() {
 
+        const data = await fetchApi('https://api.themoviedb.org/3/movie/top_rated', {
+          method: 'GET',
+          headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`
+          }
+        })
+        console.log("TopRatedMovies-2", data.data.results)
+        dispatch(setTopRatedMovie(data.data.results))
+      }
+
+      useEffect(() => {
+        topRatedMovieData()
+    
+      }, [])
 
     return (
-        <div className='bg-slate-300  pt-4  ' style={{ height: "110vh", width: "100%" }}>
-            <span className=' p-2 rounded-md text-lg font-bold bg-slate-300'>Trending Videos</span>
+        <div className='bg-slate-400  pt-4  ' style={{ height: "110vh", width: "100%" }}>
+            <span className=' p-2 rounded-md text-lg font-bold bg-slate-300'>Trending Movies</span>
             <ReactSimplyCarousel
                 activeSlideIndex={activeSlideIndex}
                 onRequestChange={setActiveSlideIndex}
@@ -66,7 +87,7 @@ function TrendingMovie() {
 
                     },
                 ]}
-                speed={600}
+                speed={900}
                 easing="linear"
                 autoplay
                 autoplayDelay={2000}

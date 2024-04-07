@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     topRatedMovie: [],
+    popular:[],
     movie:[],
     movieGenere:[],
     sortMovie:[],
@@ -29,12 +30,15 @@ const movieSlice = createSlice({
         },
         setSearchedMovie:(state,action)=>{
             state.searchedMovie=action.payload
+        },
+        setPopular:(state,action)=>{
+            state.popular=action.payload
         }
     }
 
 })
 
 // console.log(movie.actions)
-export const { setTopRatedMovie,setMovie,setGenere, setSortMovie, setSearchedMovie} = movieSlice.actions;
+export const { setTopRatedMovie,setMovie,setGenere, setSortMovie, setSearchedMovie,setPopular} = movieSlice.actions;
 export default movieSlice.reducer;
 

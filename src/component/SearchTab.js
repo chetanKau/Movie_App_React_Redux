@@ -6,17 +6,18 @@ import { useNavigate } from 'react-router-dom';
 
 function SearchTab() {
     const [searchValue, setSearchValue] = useState("");
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     const redirectToSearch = () => {
-        console.log(searchValue);
-        if(searchValue!==""){
+        console.log("search value", searchValue);
+        if (searchValue !== "") {
             navigate(`/search/${searchValue}`)
+
         }
-        else{
+        else {
             alert("Please Give us Some Movie You want to Search")
         }
-        
+
     }
 
     return (

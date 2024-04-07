@@ -78,7 +78,7 @@ function TrendingMovie() {
 
                         return (
                             <div key={movie.id}>
-                                <div className='   m-3 p-4 rounded bg-slate-600' style={{ height: "28rem", width: "16rem" }}>
+                                <div className=' grid-rows-* m-3 p-4 rounded bg-slate-600' style={{ height: "28rem", width: "16rem" }}>
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='#' />
                                     <p className=' text-lg font-bold tracking-normal text-center text-white'>{movie.original_title}</p>
                                     <p className='text-lg  tracking-normal text-center text-white'>Release Date : {movie.release_date}</p>

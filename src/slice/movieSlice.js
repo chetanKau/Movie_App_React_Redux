@@ -6,6 +6,7 @@ const initialState = {
     movie:[],
     movieGenere:[],
     sortMovie:[],
+    searchedMovie:[],
 
 }
 
@@ -25,12 +26,15 @@ const movieSlice = createSlice({
         },
         setSortMovie:(state,action)=>{
             state.sortMovie=action.payload
+        },
+        setSearchedMovie:(state,action)=>{
+            state.searchedMovie=action.payload
         }
     }
 
 })
 
 // console.log(movie.actions)
-export const { setTopRatedMovie } = movieSlice.actions;
+export const { setTopRatedMovie,setMovie,setGenere, setSortMovie, setSearchedMovie} = movieSlice.actions;
 export default movieSlice.reducer;
 

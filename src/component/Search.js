@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchedMovie() {
+function Search() {
   return (
     <div class="h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500">
       Searched Movie Here
@@ -8,4 +8,4 @@ function SearchedMovie() {
   )
 }
 
-export default SearchedMovie
+export default Search

@@ -1,21 +1,19 @@
 import React from 'react'
 import { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
-
-// import Movie from './../screens/Movie';
-// import TopRatedMovies from './../utils/TopRatedMovies';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import { useSelector } from 'react-redux';
-
-
-// console.log(topRatedMovie)
 
 
 function TrendingMovie() {
 
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     const selector = useSelector((state) => state.movieSlice.topRatedMovie)
+
+
+
     return (
-        <div className='bg-slate-300  pt-4  '  style={{ height: "110vh", width: "100%"}}>
+        <div className='bg-slate-300  pt-4  ' style={{ height: "110vh", width: "100%" }}>
             <span className=' p-2 rounded-md text-lg font-bold bg-slate-300'>Trending Videos</span>
             <ReactSimplyCarousel
                 activeSlideIndex={activeSlideIndex}
@@ -62,9 +60,9 @@ function TrendingMovie() {
                         itemsToShow: 5,
                         itemsToScroll: 1,
                         minWidth: 768,
-                        backwardBtnProps:true,
-                        forwardBtnProps:true,
-                        swipeable:false
+                        backwardBtnProps: true,
+                        forwardBtnProps: true,
+                        swipeable: false
 
                     },
                 ]}
@@ -79,11 +77,12 @@ function TrendingMovie() {
                     selector.map((movie) => {
 
                         return (
-                            <div  key={movie.id}>
-                                <div className='   m-3 p-4 rounded bg-slate-500' style={{ height: "28rem", width: "16rem" }}>
+                            <div key={movie.id}>
+                                <div className='   m-3 p-4 rounded bg-slate-600' style={{ height: "28rem", width: "16rem" }}>
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='#' />
-                                    <p className='text-lg font-bold tracking-normal text-center'>{movie.original_title}</p>
-                                    <p className='text-lg  tracking-normal text-center'>Release Date : {movie.release_date}</p>
+                                    <p className=' text-lg font-bold tracking-normal text-center text-white'>{movie.original_title}</p>
+                                    <p className='text-lg  tracking-normal text-center text-white'>Release Date : {movie.release_date}</p>
+                                    <CircularProgressbar value={movie.vote_average} text={`${movie.vote_average}`} />;
                                 </div>
                             </div>
                         )

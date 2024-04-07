@@ -4,6 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     topRatedMovie: [],
     movie:[],
+    movieGenere:[],
+    sortMovie:[],
 
 }
 
@@ -17,6 +19,12 @@ const movieSlice = createSlice({
         },
         setMovie:(state,action)=>{
             state.movie=action.payload
+        },
+        setGenere:(state,action)=>{
+            state.movieGenere=action.payload
+        },
+        setSortMovie:(state,action)=>{
+            state.sortMovie=action.payload
         }
     }
 

@@ -6,6 +6,7 @@ import Movie from './screens/Movie';
 import TvShow from './screens/TvShow';
 import Navbar from './component/Navbar';
 import Footer from './component/Footer';
+import Search from './component/Search';
 
 
 const router = createBrowserRouter([
@@ -28,8 +29,14 @@ const router = createBrowserRouter([
       <TvShow/>
       <Footer/>
     </div>
-  }
-
+  },
+  {
+  path:"/search/:name",
+  element:<div>
+    <Navbar/>
+    <Search/>
+  </div>
+}
 
 ])
 
